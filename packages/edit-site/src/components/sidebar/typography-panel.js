@@ -1,7 +1,10 @@
 /**
  * WordPress dependencies
  */
-import { LineHeightControl } from '@wordpress/block-editor';
+import {
+	LineHeightControl,
+	__experimentalFontFamilyControl as FontFamilyControl,
+} from '@wordpress/block-editor';
 import { PanelBody, FontSizePicker } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
 
@@ -30,6 +33,14 @@ export default ( {
 
 	return (
 		<PanelBody title={ __( 'Typography' ) } initialOpen={ true }>
+			{ supports.includes( 'fontFamily' ) && (
+				<FontFamilyControl
+					value={ getStyleProperty( name, 'fontFamily' ) }
+					onChange={ ( value ) =>
+						setStyleProperty( name, 'fontFamily', value )
+					}
+				/>
+			) }
 			{ supports.includes( 'fontSize' ) && (
 				<FontSizePicker
 					value={ fromPx( getStyleProperty( name, 'fontSize' ) ) }

@@ -35,6 +35,7 @@
 		},
 		"fontSize": true,
 		"lineHeight": true,
+		"__experimentalFontFamily": true,
 		"__experimentalSelector": "p",
 		"__unstablePasteTextInline": true
 	}
