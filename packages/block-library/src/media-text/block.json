@@ -74,6 +74,9 @@
 		"verticalAlignment": {
 			"type": "string"
 		},
+		"fullHeightAlignment": {
+			"type": "boolean"
+		},
 		"imageFill": {
 			"type": "boolean"
 		},

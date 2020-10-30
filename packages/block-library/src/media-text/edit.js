@@ -18,6 +18,7 @@ import {
 	useBlockProps,
 	__experimentalImageURLInputUI as ImageURLInputUI,
 	__experimentalImageSizeControl as ImageSizeControl,
+	__experimentalBlockFullHeightAligmentToolbar as FullHeightAlignment,
 } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -112,6 +113,7 @@ function attributesFromMedia( {
 			mediaLink: media.link || undefined,
 			href: newHref,
 			focalPoint: undefined,
+			fullHeightAlignment: undefined,
 		} );
 	};
 }
@@ -133,6 +135,7 @@ function MediaTextEdit( { attributes, isSelected, setAttributes } ) {
 		mediaWidth,
 		rel,
 		verticalAlignment,
+		fullHeightAlignment,
 	} = attributes;
 	const mediaSizeSlug = attributes.mediaSizeSlug || DEFAULT_MEDIA_SIZE_SLUG;
 
@@ -299,6 +302,12 @@ function MediaTextEdit( { attributes, isSelected, setAttributes } ) {
 		<>
 			<InspectorControls>{ mediaTextGeneralSettings }</InspectorControls>
 			<BlockControls>
+				<FullHeightAlignment
+					isActive={ fullHeightAlignment }
+					onToggle={ ( active ) =>
+						setAttributes( { fullHeightAlignment: active } )
+					}
+				/>
 				<ToolbarGroup controls={ toolbarControls } />
 				<BlockVerticalAlignmentToolbar
 					onChange={ onVerticalAlignmentChange }
