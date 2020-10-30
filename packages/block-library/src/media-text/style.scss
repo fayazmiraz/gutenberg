@@ -33,6 +33,11 @@
 	}
 }
 
+.wp-block-media-text.is-full-height-aligned {
+	min-height: 100vh;
+	height: 100vh;
+}
+
 .wp-block-media-text .wp-block-media-text__media {
 	/*!rtl:begin:ignore*/
 	grid-column: 1;

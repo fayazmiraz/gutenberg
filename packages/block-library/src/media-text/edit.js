@@ -169,6 +169,7 @@ function MediaTextEdit( { attributes, isSelected, setAttributes } ) {
 		'is-stacked-on-mobile': isStackedOnMobile,
 		[ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment,
 		'is-image-fill': imageFill,
+		'is-full-height-aligned': fullHeightAlignment,
 	} );
 	const widthString = `${ temporaryMediaWidth || mediaWidth }%`;
 	const gridTemplateColumns =
