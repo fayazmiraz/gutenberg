@@ -27,6 +27,7 @@ export default function save( { attributes } ) {
 		mediaWidth,
 		mediaId,
 		verticalAlignment,
+		fullHeightAlignment,
 		imageFill,
 		focalPoint,
 		linkClass,
@@ -72,6 +73,7 @@ export default function save( { attributes } ) {
 		'is-stacked-on-mobile': isStackedOnMobile,
 		[ `is-vertically-aligned-${ verticalAlignment }` ]: verticalAlignment,
 		'is-image-fill': imageFill,
+		'is-full-height-aligned': fullHeightAlignment,
 	} );
 	const backgroundStyles = imageFill
 		? imageFillStyles( mediaUrl, focalPoint )
